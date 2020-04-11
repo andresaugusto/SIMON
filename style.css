@@ -1,0 +1,17 @@
+body {
+	background-color: lightgoldenrodyellow;
+}
+
+section {
+	/* background-color: black; */
+	display: grid;
+	grid-template-rows: 150px 150px 150px;
+	grid-template-columns: 150px 150px 150px;
+}
+
+.button {
+	background-color: black;
+	margin: 2px;
+	/* shape-margin: ; */
+	padding: 5px;
+}
