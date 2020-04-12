@@ -2,8 +2,9 @@ console.log('buenos días, Andrés');
 
 // create game board <section></section>
 const gameBoard = document.querySelector('.game-board');
-let randomArray = ['b1', 'b2', 'b3'];
+let randomArray = [];
 let playerArray = [];
+let buttonAmount = 4;
 let playerScore = 0;
 console.log(playerScore);
 
@@ -18,12 +19,12 @@ gameBoard.addEventListener('mousedown', function (x) {
 	if (x.target.classList.contains('button')) {
 		// console.log('button clicked!');
 		x.target.style.backgroundColor = 'coral';
-		x.target.addEventListener('mouseup', function () {
+		x.target.addEventListener('mouseup', function (x) {
 			logMoves(x);
 			x.target.style.backgroundColor = '';
 			x.target.style.transitionDuration = '1s';
 		});
-		x.target.addEventListener('mouseout', function () {
+		x.target.addEventListener('mouseout', function (x) {
 			x.target.style.backgroundColor = '';
 			x.target.style.transitionDuration = '1s';
 			// logMoves(x);
@@ -71,30 +72,9 @@ function checkIfComplete(x) {
 		console.log(playerArray);
 		playerScore += 1;
 		console.log(playerScore);
-		shuffleRandomArray(randomArray);
+		// shuffleRandomArray(randomArray);
+		arrayNextLevel(randomArray);
 	}
-}
-
-// Fisher-Yates Shuffle adaptation
-function shuffleRandomArray(array) {
-	let counter = array.length;
-
-	// While there are elements in the array
-	while (counter > 0) {
-		// Pick a random index
-		let index = Math.floor(Math.random() * counter);
-
-		// Decrease counter by 1
-		counter--;
-
-		// And swap the last element with it
-		let temp = array[counter];
-		array[counter] = array[index];
-		array[index] = temp;
-	}
-
-	// return randomArray;
-	console.log(array);
 }
 
 // console.log array with a button (temporary action)
@@ -102,24 +82,55 @@ function shuffleRandomArray(array) {
 // reset array button (temporary)
 // ALREADY CHECKED
 
-// create random generation function for popping id's into an array
+// // create random generation function for shuffling id's in an array
+// // Fisher-Yates Shuffle adaptation
+// function shuffleRandomArray(array) {
+// 	let counter = array.length;
+// 	// While there are elements in the array
+// 	while (counter > 0) {
+// 		// Pick a random index
+// 		let index = Math.floor(Math.random() * counter);
+// 		// Decrease counter by 1
+// 		counter--;
+// 		// And swap the last element with it
+// 		let temp = array[counter];
+// 		array[counter] = array[index];
+// 		array[index] = temp;
+// 	}
+// 	// return randomArray;
+// 	console.log(array);
+// }
 
-// Fisher-Yates Shuffle adaptation
-function shuffleRandomArray(array) {
-	let counter = array.length;
-	// While there are elements in the array
-	while (counter > 0) {
-		// Pick a random index
-		let index = Math.floor(Math.random() * counter);
-		// Decrease counter by 1
-		counter--;
-		// And swap the last element with it
-		let temp = array[counter];
-		array[counter] = array[index];
-		array[index] = temp;
+// create functionality for the program to run a randomize formula for each of the values in the array
+function arrayNextLevel(array) {
+	for (i = 0; i < array.length; i++) {
+		let randomInt = Math.floor(Math.random() * Math.floor(buttonAmount));
+		array[i] = `${randomInt}`;
 	}
-	// return randomArray;
+	let randomInt = Math.floor(Math.random() * Math.floor(buttonAmount));
+	array.push(`${randomInt}`);
+	// return array;
+	console.log(randomArray);
+}
+
+function createFirstRandomArray(array) {
+	let randomInt = Math.floor(Math.random() * Math.floor(buttonAmount));
+	array.push(`${randomInt}`);
 	console.log(array);
 }
 
-// create functionality for the program to demonstrate the random generated order to follow
+createFirstRandomArray(randomArray);
+
+// create functionality for the program to demonstrate the random generated order to follow.
+
+// fix multi-click bug
+
+// fix color light-up failing bug
+
+// ONCE MULTI-CLICK BUG I FIXED: change parameters for wrong button to reset the array.
+
+// create alerts for all gameplay.
+
+// ELIMINATE ALL CONSOLE LOGS
+
+// Style it up, B.

@@ -2,16 +2,17 @@ body {
 	background-color: lightgoldenrodyellow;
 }
 
-section {
+#classic {
 	/* background-color: black; */
 	display: grid;
-	grid-template-rows: 150px 150px 150px;
-	grid-template-columns: 150px 150px 150px;
+	grid-template-rows: 200px 200px;
+	grid-template-columns: 200px 200px;
 }
 
-.button {
+#classic .button {
 	background-color: black;
 	margin: 2px;
 	/* shape-margin: ; */
 	padding: 5px;
+	/* border-radius: 50%; */
 }
