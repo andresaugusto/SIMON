@@ -1,5 +1,6 @@
 body {
 	background-color: lightgoldenrodyellow;
+	-webkit-font-smoothing: antialiased;
 }
 
 #classic {
@@ -15,4 +16,11 @@ body {
 	/* shape-margin: ; */
 	padding: 5px;
 	/* border-radius: 50%; */
+}
+
+#classic .button:hover {
+	transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	transition: 0.3s;
 }
