@@ -3,6 +3,8 @@ console.log('buenos días, Andrés');
 // create game board <section></section>
 const gameBoard = document.querySelector('.game-board');
 const buttons = document.querySelectorAll('.button');
+const score = document.querySelector('#scoreBoard');
+let allButtons = document.getElementsByClassName('button');
 let randomArray = [];
 let playerArray = [];
 let buttonAmount = 4;
@@ -23,8 +25,8 @@ function createArray(array) {
 	array.push(`${randomInt}`);
 	console.log(array);
 }
-createArray(randomArray);
-arrayAnimation(randomArray);
+// createArray(randomArray);
+// arrayAnimation(randomArray);
 
 // create button 'click' functionality
 gameBoard.addEventListener('click', function (x) {
@@ -68,7 +70,7 @@ function checkForMatch(x) {
 
 function correctButton(x) {
 	console.log('correct button');
-	buttonAnimation(x);
+	buttonPressedAnimation(x);
 	checkIfComplete(x);
 }
 
@@ -86,6 +88,24 @@ function correctButton(x) {
 // 	// setTimeout(resetTransitionDuration(x), 400);
 // }
 
+function buttonPressedAnimation(x) {
+	let color = x.target.dataset.color;
+	x.target.style.backgroundColor = color;
+	function backToBlack() {
+		x.target.style.backgroundColor = '';
+		x.target.style.transitionDuration = '.3s';
+	}
+	setTimeout(backToBlack, 200);
+	// x.target.addEventListener('click', function (x) {
+	// 	x.target.style.backgroundColor = '';
+	// 	x.target.style.transitionDuration = '.15s';
+	// });
+	// x.target.addEventListener('mouseout', function (x) {
+	// 	x.target.style.backgroundColor = '';
+	// 	x.target.style.transitionDuration = '.15s';
+	// });
+}
+
 function buttonAnimation(x) {
 	let color = x.target.dataset.color;
 	x.target.style.backgroundColor = color;
@@ -93,7 +113,7 @@ function buttonAnimation(x) {
 		x.target.style.backgroundColor = '';
 		x.target.style.transitionDuration = '.3s';
 	}
-	setTimeout(backToBlack, 300);
+	setTimeout(backToBlack, 200);
 }
 
 // // // // CLASSIC MODE: Start game from the beginning
@@ -109,13 +129,51 @@ function incorrectButton(x) {
 		x.target.style.backgroundColor = '';
 		x.target.style.transitionDuration = '.3s';
 	});
-	resetGame(x);
+	// function elementAnimation() {
+	// 	let color = button.dataset.color;
+	// 	button.style.backgroundColor = color;
+	// 	function backToBlack() {
+	// 		button.style.backgroundColor = '';
+	// 		button.style.transitionDuration = '.3s';
+	// 	}
+	// 	setTimeout(backToBlack, 200);
+	// }
+	checkHighScore();
+	score.innerText = 0;
+	score.style.color = 'red';
+	score.style.transitionDuration = '.3s';
+	function scoreDisappear() {
+		score.style.opacity = '';
+		score.style.transitionDuration = '1s';
+	}
+	setTimeout(scoreDisappear, 1500);
+	function scoreBackToWhite() {
+		score.style.color = '';
+	}
+	setTimeout(scoreBackToWhite, 2000);
+	timer += 1000;
+}
+
+const highScore = document.querySelector('#highScore');
+let highScoreValue = 0;
+highScore.innerText = `high score : ${highScoreValue}`;
+
+function checkHighScore(playerStreak) {
+	if (parseInt(playerStreak) > parseInt(highScoreValue)) {
+		highScoreValue = parseInt(playerStreak);
+	}
 }
 
 function resetGame(x) {
 	randomArray = [];
 	playerArray = [];
 	createArray(randomArray);
+	arrayAnimation(randomArray);
+	function scoreAppear() {
+		score.style.opacity = '1';
+		score.style.transitionDuration = '1s';
+	}
+	setTimeout(scoreAppear, 2000);
 }
 
 // // // // // FORGIVING MODE (possible game mode): add streak subtract on failed move until streak reaches 0 for game over
@@ -140,9 +198,15 @@ function checkIfComplete(x) {
 		playerArray = [];
 		console.log(playerArray);
 		playerStreak += 1;
+		scoreBoardManager(playerStreak);
 		console.log(playerStreak);
 		arrayNextLevel(randomArray);
 	}
+}
+
+function scoreBoardManager(points) {
+	points = parseInt(points);
+	score.innerText = points;
 }
 
 // console.log array with a button (temporary action)
@@ -193,6 +257,11 @@ function arrayNextLevel(array) {
 
 // create functionality for the program to demonstrate the random generated order to follow.
 
+// let transitionSpeed = 500;
+// let arrayDisplaySpeed = 1000;
+// let parsedTransitionSpeed = parseInt(500);
+// let parsedArrayDisplaySpeed = parseInt(1000);
+
 function arrayAnimation(array) {
 	timer = 1000;
 	for (let i = 0; i < array.length; i++) {
@@ -205,10 +274,10 @@ function arrayAnimation(array) {
 				button.style.backgroundColor = '';
 				button.style.transitionDuration = '.3s';
 			}
-			setTimeout(backToBlack, 300);
+			setTimeout(backToBlack, 200);
 		}
 		setTimeout(elementAnimation, parseInt(timer));
-		timer += 500;
+		timer += 600;
 	}
 }
 
@@ -216,11 +285,30 @@ function arrayAnimation(array) {
 // // FIXED by changing the main event listener from "mousedown" to "click"
 
 // fix color light-up failing bug
+// // FIXED by changing the timers on the timeout formulas
 
-// ONCE MULTI-CLICK BUG I FIXED: change parameters for wrong button to reset the array.
+// ONCE MULTI-CLICK BUG IS FIXED: change parameters for wrong button to reset the array.
+// // DONE
 
 // create alerts for all gameplay.
 
 // ELIMINATE ALL CONSOLE LOGS
 
 // Style it up, B.
+
+// Create eventListeners for the timing settings change
+
+// Create eventListeners for the instructions box
+const instructions = document.querySelector('.instructions');
+
+function instructionsToggleOn() {
+	instructions.style.opacity = '1';
+	function exitInstructions() {
+		instructions.style.opacity = '';
+	}
+	setTimeout(exitInstructions, 17000);
+}
+
+function instructionsToggleOff() {
+	instructions.style.opacity = '';
+}

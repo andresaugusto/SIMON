@@ -4,21 +4,73 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 		<title>SIMON</title>
 	</head>
 	<body>
 		<header>
+			
 			<h1>simon</h1>
+			
+			<section id="navigation">
+				<button id="instructionsButton" onclick="instructionsToggleOn()">instructions</button>
+				<!-- <div id="speedButton">selected speed :</div> -->
+				<div id="highScore"></div>
+			</section>
 		</header>
 		<main>
 			<section id="classic" class="game-board">
-				<span id="0" class="button" data-color="violet"></span>
-				<span id="1" class="button" data-color="green"></span>
-				<span id="2" class="button" data-color="blue"></span>
-				<span id="3" class="button" data-color="yellow"></span>
+				<span id="scoreBoard" class="scoreText" data-gridPosition="0">0</span>
+				<span id="0" class="button" data-color="violet" data-gridPosition="1"></span>
+				<span id="1" class="button" data-color="green" data-gridPosition="2"></span>
+				<span id="2" class="button" data-color="blue" data-gridPosition="3"></span>
+				<span id="3" class="button" data-color="yellow" data-gridPosition="4"></span>
 			</section>
+			
+			</br></br>
+			<button id="startRounds" onclick="resetGame()">START ROUNDS</button>
+			</br>
+			
+			<ul>
+				<li><a class="profile-link" href="https://www.linkedin.com/in/andresortizmontalvo/">L I N K E D I
+					N</a></li>
+					<li><a class="profile-link" href="https://github.com/andresaugusto">G I T H U B</a></li>
+					<li><a class="profile-link" href="https://codepen.io/andresaugusto">C O D E P E N</a></li>
+				</br></br>
+				<a><span class="email">a n d r e s . a u g u s t o @ i c l o u d . c o m</span></a></br ></br>
+			</ul>
+			<div class="virtual">
+				<img src="images/virtual.png" alt="virtual.png" srcset="">
+			</div>
+			<a><span class="date"><small>20<span class="firstLetter">20</span></small></span></a>
+			</br></br>
+				
+
+			<section class="instructions">
+				<h2><span class="firstLetter">I</span>nstructions</h2>
+				<p>Pay attention to color combinations as they appear and try to deliver each round correctly from memory. Every time you do so, your score will rise and the next combination will be larger. If you press a button out of order, the game will be over and a new game will be waiting for you to begin.</p>
+				<!-- </br > -->
+				<!-- <button id="backToGameInstructions" class="backToGameInstructions" onclick="instructionsToggleOff()">EXIT INSTRUCTIONS</button> -->
+				<!-- </br > -->
+			</section>
+		
+			<!-- <section class="speedSelection">
+				<h2><span class="firstLetter">S</span>peed selection</h2>
+				</br ></br ></br >
+				<section>
+					<div id="speed1" class="selectedSpeedOption" data-style="optionStyle">slow</div>
+					<div id="speed2" class="speedOption" data-style="optionStyle">medium</div>
+					<div id="speed3" class="speedOption" data-style="optionStyle">fast</div>
+				</section>
+				</br ></br ></br ></br ></br >
+				</sect>
+				<div id="backToGame">BACK TO GAME</div>
+				</br>
+			</section> -->
 		</main>
-		<footer></footer>
+		<footer>
+		</footer>
 		<script src="/script.js"></script>
 	</body>
 </html>
