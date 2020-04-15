@@ -4,7 +4,8 @@ console.log('buenos días, Andrés');
 const gameBoard = document.querySelector('.game-board');
 const buttons = document.querySelectorAll('.button');
 const score = document.querySelector('#scoreBoard');
-let allButtons = document.getElementsByClassName('button');
+const highScore = document.querySelector('#highScore');
+let highScoreValue = 0;
 let randomArray = [];
 let playerArray = [];
 let buttonAmount = 4;
@@ -138,7 +139,8 @@ function incorrectButton(x) {
 	// 	}
 	// 	setTimeout(backToBlack, 200);
 	// }
-	checkHighScore();
+	console.log(playerStreak, highScoreValue);
+	checkHighScore(playerStreak, highScoreValue);
 	score.innerText = 0;
 	score.style.color = 'red';
 	score.style.transitionDuration = '.3s';
@@ -154,17 +156,15 @@ function incorrectButton(x) {
 	timer += 1000;
 }
 
-const highScore = document.querySelector('#highScore');
-let highScoreValue = 0;
-highScore.innerText = `high score : ${highScoreValue}`;
-
-function checkHighScore(playerStreak) {
+function checkHighScore(playerStreak, highScoreValue) {
 	if (parseInt(playerStreak) > parseInt(highScoreValue)) {
 		highScoreValue = parseInt(playerStreak);
+		highScore.innerText = `high score : ${highScoreValue}`;
 	}
 }
 
 function resetGame(x) {
+	playerStreak = 0;
 	randomArray = [];
 	playerArray = [];
 	createArray(randomArray);
@@ -300,15 +300,18 @@ function arrayAnimation(array) {
 
 // Create eventListeners for the instructions box
 const instructions = document.querySelector('.instructions');
-
-function instructionsToggleOn() {
-	instructions.style.opacity = '1';
-	function exitInstructions() {
-		instructions.style.opacity = '';
-	}
-	setTimeout(exitInstructions, 17000);
-}
+const instructionsExitButton = document.querySelector(
+	'#backToGameInstructions'
+);
+instructionsExitButton.addEventListener('click', instructionsToggleOff);
 
 function instructionsToggleOff() {
 	instructions.style.opacity = '';
+	instructions.style.pointerEvents = '';
+}
+
+function instructionsToggleOn() {
+	console.log('somestring');
+	instructions.style.opacity = '1';
+	instructions.style.pointerEvents = 'all';
 }
