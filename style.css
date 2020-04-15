@@ -89,34 +89,6 @@ section p {
 	margin: 60px;
 }
 
-.speedSelection {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 100px;
-	border: #807a70;
-	border-style: solid;
-	border-width: 1px;
-	background-color: black;
-	text-align: center;
-	z-index: 10;
-	opacity: 0;
-	pointer-events: none;
-	transition: all 500ms ease;
-}
-
-.speedSelection h2 {
-	margin-top: -50px;
-}
-
-.speedSelection [data-style='optionStyle'] {
-	display: inline;
-	font-size: 30px;
-	font-weight: 300;
-	margin: 200px 40px 40px 40px;
-}
-
 .firstLetter {
 	font-family: 'Playfair Display', serif;
 	font-size: 75px;
