@@ -12,6 +12,12 @@ https://andresaugusto.github.io/simon/.
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 
+## Languages
+
+* HTML5
+* CSS3
+* Vanilla JavaScript ES6
+
 ## Passes
 
 * [Validator.nu](https://html5.validator.nu/) - HTML5 Validator
