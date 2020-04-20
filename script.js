@@ -1,6 +1,4 @@
-//	//	//				//	//	//
 //	//	//	VARIABLES	//	//	//
-//	//	//				//	//	//
 
 const gameBoard = document.querySelector('.game-board');
 const buttons = document.querySelectorAll('.button');
@@ -18,17 +16,13 @@ let playerArray = [];
 let buttonAmount = 4;
 let playerStreak = 0;
 
-//	//	//								//	//	//
 //	//	//	INDEPENDENT EVENT LISTENERS	//	//	//
-//	//	//								//	//	//
 
 instructionsButton.addEventListener('click', instructionsToggleOn);
 instructionsExitButton.addEventListener('click', instructionsToggleOff);
 startRoundsButton.addEventListener('click', startRounds);
 
-//	//	//						//	//	//
 //	//	//	USER PREPARATION	//	//	//
-//	//	//						//	//	//
 
 function instructionsToggleOn() {
 	instructions.style.opacity = '1';
@@ -40,9 +34,7 @@ function instructionsToggleOff() {
 	instructions.style.pointerEvents = '';
 }
 
-//	//	//							//	//	//
 //	//	//	PROMPTING GAME START	//	//	//
-//	//	//							//	//	//
 
 function startRounds(x) {
 	playerStreak = 0;
@@ -62,9 +54,7 @@ function createArray(array) {
 	array.push(`${randomInt}`);
 }
 
-//	//	//									//	//	//
 //	//	//	AUTOMATED EXPANDING ANIMATION	//	//	//
-//	//	//									//	//	//
 
 function arrayAnimation(array) {
 	timer = 1000;
@@ -85,9 +75,7 @@ function arrayAnimation(array) {
 	}
 }
 
-//	//	//								//	//	//
 //	//	//	USER-RESPONSIVE GAMEPLAY	//	//	//
-//	//	//								//	//	//
 
 gameBoard.addEventListener('click', function (x) {
 	x.target.style.transitionDuration = '.01s';
@@ -111,9 +99,7 @@ function checkForMatch(x) {
 	}
 }
 
-//	//	//							//	//	//
 //	//	//	CORRECT-CASE SCENARIO	//	//	//
-//	//	//							//	//	//
 
 function correctButton(x) {
 	buttonPressedAnimation(x);
@@ -157,9 +143,7 @@ function checkHighScore(playerStreak, highScoreValue) {
 	}
 }
 
-//	//	//							//	//	//
 //	//	//	INCORRECT-CASE SCENARIO	//	//	//
-//	//	//							//	//	//
 
 function incorrectButton(x) {
 	x.target.style.backgroundColor = 'red';

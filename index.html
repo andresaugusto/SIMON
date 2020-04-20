@@ -5,8 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
 		<link
-			href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat&display=swap"
+			href="//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800"
 			rel="stylesheet"
+			type="text/css"
 		/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap"
@@ -16,14 +17,14 @@
 	</head>
 	<body>
 		<header>
-			<h1>simon</h1>
+			<h1>sim[]n</h1>
 
-			<section id="navigation">
+			<div id="navigation">
+				<div id="highScore">HIGH SCORE : 0</div>
 				<button id="instructionsButton">
-					instructions
+					INSTRUCTIONS
 				</button>
-				<div id="highScore">high score : 0</div>
-			</section>
+			</div>
 		</header>
 		<main>
 			<section class="instructions">
@@ -35,13 +36,11 @@
 					button out of order, the game will be over and a new game will be
 					waiting for you to begin.
 				</p>
-				<br />
 				<button id="backToGameInstructions" class="backToGameInstructions">
 					EXIT INSTRUCTIONS
 				</button>
-				<br />
 			</section>
-			<section id="classic" class="game-board">
+			<div id="classic" class="game-board">
 				<span id="scoreBoard" class="scoreText" data-gridPosition="0">0</span>
 				<span
 					id="0"
@@ -67,11 +66,9 @@
 					data-color="yellow"
 					data-gridPosition="4"
 				></span>
-			</section>
+			</div>
 
-			<br /><br />
 			<button id="startRounds">START ROUNDS</button>
-			<br />
 
 			<ul>
 				<li>
@@ -91,22 +88,16 @@
 						>C O D E P E N</a
 					>
 				</li>
-				<br /><br />
-				<a
-					><span class="email"
-						>a n d r e s . a u g u s t o @ i c l o u d . c o m</span
-					></a
-				><br /><br />
 			</ul>
+			<div class="email">andres.augusto@icloud.com</div>
 			<div class="virtual">
-				<img src="images/virtual.png" alt="virtual.png" srcset="" />
+				<img src="images/virtual.png" alt="virtual.png" />
 			</div>
 			<a
 				><span class="date"
 					><small>20<span class="firstLetter">20</span></small></span
 				></a
 			>
-			<br /><br />
 		</main>
 		<footer></footer>
 		<script src="script.js"></script>
