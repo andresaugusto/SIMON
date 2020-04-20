@@ -5,6 +5,7 @@ body {
 	color: #807a70;
 	text-align: center;
 	margin: 0 auto;
+	margin-bottom: 30vmin;
 }
 
 header {
@@ -70,7 +71,8 @@ h1 {
 }
 
 .instructions h2 {
-	font-size: 8vmin;
+	font-size: 4vmin;
+	font-weight: 400;
 	padding: 0rem;
 	margin: 0rem;
 }
@@ -81,6 +83,7 @@ section p {
 }
 
 section .backToGameInstructions {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 4vmin;
 	color: #807a70;
 	background: black;
@@ -89,6 +92,13 @@ section .backToGameInstructions {
 	border-right: none;
 	border-left: none;
 	opacity: 1;
+	transition: transform 0.2s;
+}
+
+section .backToGameInstructions:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
 }
 
 /* GAME BOARD */
@@ -208,7 +218,7 @@ a {
 /* CLOSING SIGNATURE */
 
 img {
-	max-width: 4rem;
+	max-width: 15vmin;
 	margin: 0 auto;
 	opacity: 30%;
 }
