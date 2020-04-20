@@ -1,5 +1,9 @@
 # sim[]n
 
+![preview](images/IMG_6077.png)
+
+![preview](images/IMG_6078.png)
+
 I am sim[]n. A visually abstracted take on the 1978 audio/visual challenge of memory.
 
 ## Getting Started
@@ -32,5 +36,3 @@ https://andresaugusto.github.io/simon/.
 
 * Jennifer Meade - for your guidance and patience.
 * Patricia Padilla - for your design feedback and beta testing.
-
-
