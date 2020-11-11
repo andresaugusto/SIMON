@@ -4,7 +4,7 @@
 
 ![preview](images/IMG_6078.png)
 
-I am sim[]n. A visually abstracted take on the 1978 audio/visual challenge of memory.
+The 1978 audio/visual challenge of memory, abstracted into the universally accessible.
 
 ## Getting Started
 
