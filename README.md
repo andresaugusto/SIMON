@@ -29,7 +29,7 @@ https://andresaugusto.github.io/simon/.
 
 ## Authors
 
-* **Andrés Augusto Ortiz Montalvo** - *Full-Stack Design and Game Logic recreation*
+* **Andrés Augusto Ortiz Montalvo** - *Frontend Design and Game Logic recreation*
 * **Ralph Baer in association with Marvin Glass & Associates - Game Idea and Name (Simon - 1978)** - *The game and Its patents are held by Milton Bradley, the original manufacturer*
 
 ## Acknowledgments
